@@ -30,7 +30,19 @@ exports.register = async (req, res) => {
     }
 };
 
+exports.getProfile = async (req, res) => {
+    try {
+        // Find the user by ID from the JWT token payload
+        const user = await User.findById(req.user._id).select('-password');
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
 
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error });
+    }
+};
 
 exports.verify = async (req, res) => {
     const { token } = req.params;

@@ -1,5 +1,6 @@
 const express = require('express');
-const { register, login, forgotPassword, resetPassword, verify } = require('../controllers/authController');
+const { register, login, forgotPassword, resetPassword, verify, getProfile } = require('../controllers/authController');
+const protect = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -101,6 +102,25 @@ router.get('/verify/:token', verify);
  *         description: Server error
  */
 router.post('/login', login);
+
+/**
+ * @swagger
+ * /api/auth/profile:
+ *   get:
+ *     summary: Get user profile information
+ *     tags: [Auth]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       '200':
+ *         description: Successfully retrieved profile information
+ *       '401':
+ *         description: Unauthorized, token not provided or invalid
+ *       '500':
+ *         description: Internal server error
+ */
+
+router.get('/profile', protect, getProfile);
 
 /**
  * @swagger

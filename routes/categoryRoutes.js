@@ -57,7 +57,7 @@ const protect = require('../middleware/auth');
 
 /**
  * @swagger
- * /api/category/categories:
+ * /api/catagory/categories:
  *   post:
  *     summary: Create a new category
  *     tags: [Categories]
@@ -79,14 +79,6 @@ const protect = require('../middleware/auth');
  *               description:
  *                 type: string
  *                 example: "Work related tasks"
- *               createdBy:
- *                 type: string
- *                 example: "60b8c0b5f1d4c2b4a4a1e5c4"  
- *               tasks:
- *                 type: array
- *                 items:
- *                   type: string
- *                   example: "60b8c0b5f1d4c2b4a4a1e5c5" 
  *     responses:
  *       201:
  *         description: Category created successfully

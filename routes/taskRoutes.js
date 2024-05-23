@@ -50,9 +50,6 @@ const router = express.Router();
  *         assignedTo:
  *           type: string
  *           description: The user ID the task is assigned to
- *         createdBy:
- *           type: string
- *           description: The user ID who created the task
  *         category:
  *           type: string
  *           description: The category ID of the task
