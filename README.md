@@ -23,7 +23,7 @@ This repository contains the backend implementation of a Task Management System 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/task-management-system.git
+   git clone https://github.com/yourusername/TMS.git
    cd task-management-system
    ```
 
