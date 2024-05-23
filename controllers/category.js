@@ -2,7 +2,7 @@ const Category = require('../models/Category');
 
 // Create a new category
 exports.createCategory = async (req, res) => {
-    const { name } = req.body;
+    const { name, description, tasks } = req.body;
     const createdBy = req.user._id;
 
     try {
@@ -13,7 +13,7 @@ exports.createCategory = async (req, res) => {
             return res.status(400).json({ message: 'Category with this name already exists' });
         }
 
-        const category = new Category({ name, createdBy });
+        const category = new Category({ name, description, createdBy, tasks });
         await category.save();
         res.status(201).json(category);
     } catch (error) {
