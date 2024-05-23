@@ -1,45 +1,71 @@
-Task Management System (TMS) - README
-This directory contains the backend code for the Task Management System challenge.
+### README for Task Management System
 
-Prerequisites
-Node.js and npm (or yarn) installed on your system.
-A MongoDB database instance running locally or remotely.
-Installation
-Clone this repository:
+# Task Management System
 
-Bash
-git clone https://github.com/yonatan12121/TMS.git
-Use code with caution.
-content_copy
-Navigate to the tms directory:
+This repository contains the backend implementation of a Task Management System (TMS). The system is designed to manage tasks, users, and collaborations, providing a robust API for these functionalities.
 
-Bash
-cd TMS/tms
-Use code with caution.
-content_copy
-Install dependencies:
+## Features
 
-Bash
-npm install
+- User Management: Register, login, and password reset
+- Task Creation and Management: Create, update, view, and delete tasks
+- Task Organization: Categorize and filter tasks
+- Collaboration and Communication: Comment on tasks and share tasks/projects
+- Reporting: Dashboard and report generation
+- Integration: APIs for third-party integration
 
-Use code with caution.
-content_copy
-Setting Up Database Connection
-1. MongoDB Configuration:
+## Tech Stack
 
-Update the config.js file with your MongoDB connection details:
+- Node.js
+- Express.js
+- MongoDB
 
-MONGODB_URI: The connection string for your MongoDB database.
-Running the Application
-Start the development server:
+## Installation
 
-Bash
-npm run dev
-Use code with caution.
-content_copy
-This will start the TMS server on a default port (usually 5000). You can access the TMS API endpoints using tools like Postman or curl.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/task-management-system.git
+   cd task-management-system
+   ```
 
-Note: Remember to configure environment variables for sensitive information before running.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-API Documentation
-Detailed API documentation for TMS is available in the ./api folder. This folder contains OpenAPI (Swagger) specifications describing the TMS API endpoints, request/response formats, and authentication requirements.
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add the following variables:
+   ```env
+   MONGODB_URI=your_mongodb_uri
+   JWT_SECRET=your_jwt_secret
+   ```
+
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+## API Documentation
+
+The API documentation is provided using OpenAPI (Swagger). To access the documentation:
+
+1. Run the development server.
+2. Navigate to `http://localhost:3000/api-docs`.
+
+## Project Structure
+
+```plaintext
+├── src
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── middlewares
+│   └── utils
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
+```
+
+## Contributing
+
+Contributions are welcome! Please fork this repository and submit a pull request.
